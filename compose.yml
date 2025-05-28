@@ -1,0 +1,22 @@
+services:
+  proxy:
+    image: nginx:latest
+    restart: unless-stopped
+    volumes:
+      - ./proxy/default.conf.template:/etc/nginx/templates/default.conf.template
+    environment:
+      - NGINX_HOST=localhost
+      - NGINX_PORT=80
+    ports:
+      - "80:80"
+
+  pay-a-friend:
+    build: ./Pay-A-Friend
+    volumes:
+      - ./Pay-A-Friend:/app
+      - /Pay-A-Friend/node_modules
+    environment:
+      - PORT=3000
+    ports: 
+      - 3000:3000
+    restart: unless-stopped

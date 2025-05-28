@@ -1,0 +1,156 @@
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 16px;
+    background-color: beige;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: rgb(5, 86, 116);
+    background-image: url(../images/background2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.image-preview-container {
+    position: absolute;
+    bottom: 0%;
+    left: 75%;
+}
+
+#image-preview {
+    max-width: 86px;
+    max-height: 86px;
+    display: block;
+}
+
+input[type="file"] {
+    width: 68%;
+    height: 60%;
+    align-items: stretch;
+}
+
+h1,
+h2 {
+    text-align: center;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-section {
+    margin: 0px 0px 4px 0px;
+}
+
+.form-group-1-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.form-group-2-container {
+    display: grid;
+    /* gap: 10px; */
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.form-group-3-container {
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.form-group-3-container> :nth-child(1) {
+    grid-column: 1/2;
+    grid-row: 1;
+}
+
+.form-group-3-container> :nth-child(2) {
+    grid-column: 2/-1;
+    grid-row: 1;
+}
+
+.form-group {
+    display: grid;
+    position: relative;
+    margin: 0px 8px 8px 0px;
+}
+
+input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: black;
+}
+
+button {
+    cursor: pointer;
+    background-color: #3aec48;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin: 5px;
+    min-width: 260px;
+}
+
+button:hover {
+    background-color: #35e244;
+}
+
+.is-invalid {
+    /* background-color: rgba(255, 0, 0, 0.807); */
+    border-color: red;
+}
+
+.invalid-feedback {
+    display: none;
+    color: red;
+    font-size: 0.64em;
+    position: absolute;
+    top: 100%;
+    /* left: 5%; */
+}
+
+#message {
+    min-width: 250px;
+    min-height: 25px;
+    max-height: 25px;
+    max-width: 250px;
+}
+
+.card-select {
+    padding: 4px;
+    /* Add some padding inside the select box */
+    font-size: 0.85em;
+    /* Change the font size */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    /* Add rounded corners */
+    background-color: white;
+    /* Change the background color */
+    cursor: pointer;
+    /* Change the mouse cursor on hover */
+}
+
+.card-select:focus {
+    border-color: blue;
+    outline: none;
+}
+
+#terms-container {
+    /* position: relative; */
+    display: flex;
+    /* align-items: center; */
+    margin-top: 16px;
+    justify-content: center;
+}

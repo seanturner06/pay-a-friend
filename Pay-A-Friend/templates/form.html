@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay-A-Friend</title>
+    <link rel="stylesheet" href="../css/form.css">
+    <script src="/js/form.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <h1>Pay-A-Friend</h1>
+    <!-- <img src="../static/images/logo.png" alt="Pay-A-Friend Logo"> -->
+    <div class="container">
+        <form action="/send" id="form" method="post" enctype="multipart/form-data" novalidate>
+            <h2>Payment Form</h2>
+            <div class="form-section">
+                <h3>Sender Details</h3>
+
+                <div class="form-group-1-container">
+
+                    <div class="form-group">
+                        <label for="sfirstname">First Name</label>
+                        <input type="text" name="sfirstname" id="sfirstname" placeholder="First Name" required
+                            data-validation-type="name">
+                        <div class="invalid-feedback" id="sfirstname-invalid">
+                            First Name is required.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="slastname">Last Name</label>
+                        <input type="text" name="slastname" id="slastname" placeholder="Last Name" required
+                            data-validation-type="name">
+                        <div class="invalid-feedback" id="slastname-invalid">
+                            Last Name is required.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="image-preview-container">
+                            <img id="image-preview" alt="Image Preview">
+                        </div>
+                        <input type="file" name="file" id="file" accept="image/*">
+                    </div>
+                </div>
+            </div>
+            <div class="form-section">
+                <h3>Receiver Details</h3>
+                <div class="form-group-2-container">
+                    <div class="form-group">
+                        <label for="rfirstname">First Name</label>
+                        <input type="text" name="rfirstname" id="rfirstname" placeholder="First Name"
+                            data-validation-type="name" required>
+                        <div class="invalid-feedback" id="rfirstname-invalid">
+                            First Name is required.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="rlastname">Last Name</label>
+                        <input type="text" name="rlastname" id="rlastname" placeholder="Last Name" required
+                            data-validation-type="name">
+                        <div class="invalid-feedback" id="rlastname-invalid">
+                            Last Name is required.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Message" required
+                            data-validation-type="message-box"></textarea>
+                        <div class="invalid-feedback" id="message-invalid">Your message must be at least 10 characters.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <fieldset>
+                            <legend>Notification Method</legend>
+                            <input type="radio" name="notify-method" id="email-option" value="Email" required>
+                            <label for="email-option">Email</label>
+                            <input type="radio" name="notify-method" id="sms-option" value="SMS" required>
+                            <label for="sms-option">SMS</label>
+                            <input type="radio" name="notify-method" id="no-option" value="Do Not Notify" required>
+                            <label for="no-option">Do Not Notify</label>
+                        </fieldset>
+                        <div class="invalid-feedback" id="notify-method-invalid">
+                            Notification Method is required.
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Email" data-validation-type="email">
+                        <div class="invalid-feedback" id="email-invalid">
+                            Email is required if selected as notifcation method.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" name="sms" id="sms" placeholder="Phone Number" data-validation-type="phone">
+                        <div class="invalid-feedback" id="sms-invalid">
+                            Phone number is required if selected as notification method.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-section">
+                <h3>Payment Details</h3>
+                <div class="form-group-3-container">
+                    <div class="form-group">
+                        <label for="card-type">Card Type</label>
+                        <select class="card-select" name="card-type" id="card-type" required
+                            data-validation-type="card-type">
+                            <option value="" disabled selected>Please select a card type</option>
+                            <option value="visa">Visa</option>
+                            <option value="amex">American Express</option>
+                            <option value="mastercard">Mastercard</option>
+                            <option value="discover">Discover</option>
+                        </select>
+                        <div class="invalid-feedback" id="card-type-invalid">
+                            Card Type is required.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="card-number">Card Number</label>
+                        <input type="text" name="card-number" id="card-number" placeholder="Card Number" required
+                            data-validation-type="card-number">
+                        <div class="invalid-feedback" id="card-number-invalid">
+                            Card Number is required.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="card-exp">Card Expiration</label>
+                        <input type="month" name="card-exp" id="card-exp" placeholder="MM/ YYYY" required
+                            data-validation-type="card-exp">
+                        <div class="invalid-feedback" id="card-exp-invalid">
+                            Card Expiration is required.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="card-ccv">Card CCV</label>
+                        <input type="password" name="card-ccv" id="card-ccv" placeholder="Card CCV" required
+                            data-validation-type="card-ccv">
+                        <!-- <small>Must be 3-4 digits.</small> -->
+                        <div class="invalid-feedback" id="card-ccv-invalid">
+                            Card CCV is required.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Amount</label>
+                        <input type="number" name="amount" id="amount" placeholder="Amount" min="1" step="0.1" required
+                            data-validation-type="amount">
+                        <!-- <small>Must be a positive number.</small> -->
+                        <div class="invalid-feedback" id="amount-invalid">
+                            Amount required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-section">
+                <div class="form-group">
+                    <div id="terms-container">
+                        <input type="checkbox" name="terms" id="terms" data-validation-type="terms" required>
+                        <label for="terms">I agree to the Terms and Conditions</label>
+                        <div class="invalid-feedback" id="terms-invalid">
+                            Terms and Conditions required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+    </div>
+</body>
+
+</html>
