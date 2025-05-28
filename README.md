@@ -2,6 +2,11 @@
 
 **Pay-A-Friend** is a prototype peer-to-peer payment interface built to simulate the experience of sending and receiving money between users. While it mimics the flow of a real payment app, it is not connected to any financial APIs and does not currently store data in a database.
 
+
+## Demo Coming Soon....
+
+<img width="1183" alt="Screenshot 2025-05-28 at 3 53 02 PM" src="https://github.com/user-attachments/assets/aba8faba-b9e4-4cbc-8fc0-4b818d8ed9eb" />
+
 ---
 
 ## 🚀 Features
